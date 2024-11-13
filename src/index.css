@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:ital,wght@0,800;1,800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ------- Base & Typography ------- */
+  html {
+    @apply overflow-x-hidden;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+  }
+  h1 {
+    font-family: "Montserrat", sans-serif;
+  }
+  p,
+  h4 {
+    @apply lg:text-sm text-[12px] text-white;
+  }
+  /* ------- //Base & Typography ------- */
+  /* ------- Custom Scrollbar ------- */
+  body::-webkit-scrollbar {
+    @apply w-[9px];
+  }
+  body::-webkit-scrollbar-track {
+    @apply bg-transparent rounded-[10px];
+  }
+  body::-webkit-scrollbar-thumb {
+    @apply bg-transparent rounded-[10px] border-[#342e3f] border-solid border;
+  }
+  /* ------- //Custom Scrollbar ------- */
+}
+
+@layer components {
+  /* ------- Navigation Styles ------- */
+  .nav-link {
+    @apply items-center cursor-pointer flex lg:w-[8rem] w-[7rem] lg:text-sm text-[12px];
+    &:hover {
+      @apply gap-3;
+    }
+  }
+  .nav-link:before {
+    @apply bg-[white] inline-block h-[1px] w-0;
+    content: "";
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .nav-link:hover:before {
+    @apply w-20;
+  }
+  .active-nav-link {
+    @apply items-center cursor-pointer flex lg:w-[8rem] w-[7rem] font-bold gap-3;
+  }
+  .active-nav-link:before {
+    @apply bg-white inline-block h-px w-20;
+    content: "";
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* ------- //Navigation Styles ------- */
+  /* ------- Hero Heading Styles ------- */
+  #hero-heading-parent {
+    @apply lg:w-[1038px] w-[220px] text-white font-black text-[2rem] lg:text-[10rem] lg:mb-[-4.8rem] mb-[-2rem] uppercase overflow-hidden relative whitespace-nowrap;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+  #hero-heading-child {
+    @apply bg-transparent lg:left-[236px] left-[43px] lg:top-[20px] bg-gradient-to-r from-[#B8B7FF] via-[#7977C7] to-[#4A489E] inline-block text-transparent bg-clip-text overflow-hidden absolute;
+    animation: openclose 8s ease-in-out infinite;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+  @keyframes openclose {
+    0% {
+      @apply w-0 top-[-0.4px];
+    }
+    10% {
+      @apply w-0 top-[-0.4px];
+    }
+    20% {
+      @apply top-[-0.4px] w-[1038px] indent-[5px];
+    }
+    30% {
+      @apply top-[-0.4px] w-[1038px] indent-[5px];
+    }
+    40% {
+      @apply top-[-0.4px] w-0 indent-[5px];
+    }
+    50% {
+      @apply top-[-0.4px] w-0 indent-[5px];
+    }
+    55% {
+      @apply top-[-15rem] w-0;
+    }
+    60% {
+      @apply top-[-15rem] w-0;
+    }
+    70% {
+      @apply top-[-15rem] w-[680px] indent-[5px];
+    }
+    80% {
+      @apply top-[-15rem] w-[680px] indent-[5px];
+    }
+    90% {
+      @apply top-[-15rem] w-0;
+    }
+    100% {
+      @apply top-0 w-0 indent-0;
+    }
+  }
+  /* ------- //Hero Heading Styles ------- */
+}
